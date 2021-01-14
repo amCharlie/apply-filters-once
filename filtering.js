@@ -11,6 +11,7 @@
 
   // apply all selected filters
   function applyAllFilters () {
+	alert("数据刷新中...");
    // alert("apply all filters!")
    // Initialization succeeded! Get the dashboard
    let dashboard = tableau.extensions.dashboardContent.dashboard;
@@ -77,6 +78,8 @@
 		
       });
     });
+	
+	alert("数据刷新完成！");
   }
   
 })();
