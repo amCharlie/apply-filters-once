@@ -23,7 +23,9 @@
       worksheet.getFiltersAsync().then(function (filtersForWorksheet) {
         filtersForWorksheet.forEach(function (filter) {
 			var f_name = filter.fieldName;
-			alert('读取到筛选器：' + f_name);
+			if (f_name == 'BG' || f_name == 'k_BG'){
+					alert('读取到筛选器：' + f_name);
+			}
 			var all_selected = filter.isAllSelected; 
 			var f_type = filter.filterType;
 			var vals = filter.appliedValues;
@@ -44,7 +46,9 @@
 							filtersForWorksheet_1.forEach(function (filter_1) {
 								var f_name_1 = filter_1.fieldName;
 								if (f_name.substring(2,) == f_name_1){
-									alert("将" + f_name + "的筛选值应用于" + f_name_1);
+									if (f_name == 'BG' || f_name == 'k_BG'){
+										alert("将" + f_name + "的筛选值应用于" + f_name_1);
+									}
 									worksheet_1.applyFilterAsync(f_name_1, vals_array, 'replace', false);
 								}
 							});
@@ -56,7 +60,9 @@
 							filtersForWorksheet_1.forEach(function (filter_1) {
 								var f_name_1 = filter_1.fieldName;
 								if (f_name.substring(2,) == f_name_1){
-									alert("将" + f_name + "的筛选值应用于" + f_name_1);
+									if (f_name == 'BG' || f_name == 'k_BG'){
+										alert("将" + f_name + "的筛选值应用于" + f_name_1);
+									}
 									worksheet_1.applyFilterAsync(f_name_1, vals_array, 'all', false);
 								}
 							});
