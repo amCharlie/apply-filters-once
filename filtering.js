@@ -40,6 +40,7 @@
 
   // apply all selected filters
   function applyAllFilters () {
+   let start = Date.now();
 	$('#loading').removeClass('hidden').addClass('show');
    // alert("apply all filters!")
    // Initialization succeeded! Get the dashboard
@@ -144,6 +145,8 @@
 
 	  Promise.all(apply_all_list).then(function (){
 		  $('#loading').removeClass('hidden').addClass('hidden');
+		  let end = Date.now();
+		  alert("共耗时" + (end - start) / 1000 + "s");
 	  });
 	});
   }
