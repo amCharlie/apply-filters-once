@@ -90,7 +90,7 @@
 		});
 	});
 	init_k_filters = new_init_filters;
-	alert("本次更新的筛选器有" + k_filters.length + "个");
+	// alert("本次更新的筛选器有" + k_filters.length + "个");
 		
 	 // 封装刷新参数
 	  var worksheet_list = [];
@@ -141,12 +141,12 @@
 	  for (var i = 0; i < worksheet_list.length; i++) {
 		  apply_all_list.push(worksheet_list[i].applyFilterAsync(apply_filter_list[i], apply_values_list[i],apply_type_list[i], false));
 	  }
-	  alert("共循环作用了" + worksheet_list.length + "次");
+	  // alert("共循环作用了" + worksheet_list.length + "次");
 
 	  Promise.all(apply_all_list).then(function (){
 		  $('#loading').removeClass('hidden').addClass('hidden');
 		  let end = Date.now();
-		  alert("共耗时" + (end - start) / 1000 + "s");
+		  // alert("共耗时" + (end - start) / 1000 + "s");
 	  });
 	});
   }
